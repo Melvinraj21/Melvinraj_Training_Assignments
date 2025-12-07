@@ -1,0 +1,84 @@
+package OopsAssignment;
+class BankAccount {
+
+    protected String accountNo;
+    protected double balance;
+
+    public BankAccount(String accountNo, double balance) {
+        this.accountNo = accountNo;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount!");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance or invalid amount!");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+// Subclass 1 → Savings Account
+class SavingsAccount extends BankAccount {
+
+    private double interestRate;
+
+    public SavingsAccount(String accountNo, double balance, double interestRate) {
+        super(accountNo, balance);
+        this.interestRate = interestRate;
+    }
+
+    public void addInterest() {
+        double interest = balance * (interestRate / 100);
+        balance += interest;
+        System.out.println("Interest added: " + interest);
+    }
+}
+
+// Subclass 2 → Salary Account
+class SalaryAccount extends BankAccount {
+
+    private double monthlySalary;
+
+    public SalaryAccount(String accountNo, double balance, double monthlySalary) {
+        super(accountNo, balance);
+        this.monthlySalary = monthlySalary;
+    }
+
+    public void creditSalary() {
+        balance += monthlySalary;
+        System.out.println("Salary credited: " + monthlySalary);
+    }
+}
+public class BankAccountProblem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 SavingsAccount s = new SavingsAccount("SA1001", 5000, 5);
+	        s.deposit(1000);
+	        s.addInterest();
+	        System.out.println("Savings Account Balance: " + s.getBalance());
+
+	        System.out.println("-----------------------");
+
+	        SalaryAccount sal = new SalaryAccount("SAL2001", 2000, 25000);
+	        sal.creditSalary();
+	        sal.withdraw(5000);
+	        System.out.println("Salary Account Balance: " + sal.getBalance());
+	}
+
+}
