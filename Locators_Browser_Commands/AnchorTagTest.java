@@ -1,0 +1,27 @@
+package Locators;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class AnchorTagTest {
+  @Test
+  public void AnchorTag() {
+	  WebDriver driver = new ChromeDriver();
+	  driver.manage().window().maximize();
+	  driver.get("https://scribe.com/");
+	  
+	  List<WebElement> list = driver.findElements(By.tagName("a"));
+	  
+	  System.out.println("\n\n\n ----------------------------------");
+	  for(WebElement Li:list) {
+		  System.out.println(Li.getDomAttribute("href"));
+	  }
+	  
+
+  }
+}
