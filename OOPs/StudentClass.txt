@@ -1,7 +1,7 @@
 public class StudentEncapsulationDemo{
     public static void main(String[] args){
         Student s=new Student();
-        s.setName("Sanjith Meenakshi Sundaram");
+        s.setName("Melvin");
         s.setRollNo(101);
         s.setMarks(95);   
         s.setMarks(150); 
