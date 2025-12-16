@@ -1,0 +1,10 @@
+1.TestNG supports test case prioritisation.
+2.TestNG allows grouping of test cases like smoke and regression.
+3.TestNG supports parallel execution, reducing execution time.
+4.TestNG provides built-in data-driven testing using DataProvider.
+5.TestNG supports dependency between test methods.
+6.TestNG offers more powerful annotations (before/after suite, test, groups).
+7.TestNG generates detailed HTML reports by default.
+8.TestNG supports parameterisation through XML files.
+9.TestNG allows flexible test configuration using testng.xml.
+10.TestNG is more suitable for Selenium automation frameworks than JUnit
